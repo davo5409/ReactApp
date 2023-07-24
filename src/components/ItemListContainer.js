@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+
 
 const empanadasBase = [
     {id:1, producto: "jamonyqueso", precio: 200, stock:36},
@@ -18,6 +18,7 @@ console.log(empanadasBase.map(emp => emp.id));
 console.log(empanadasBase.map(emp =>emp.stock).join('-'));
 
 
+//PROMISE
 
 const task = new Promise((resolve,reject) => {
     setTimeout(() => {
@@ -26,10 +27,6 @@ const task = new Promise((resolve,reject) => {
     
 })
 
-
-
-
-//PROMISE
 
 function Empanadas() {
     const [empanadas, setEmpanadas]= useState([]);
