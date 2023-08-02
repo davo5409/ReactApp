@@ -15,7 +15,7 @@ const empanadasBase = [
 
 console.log(empanadasBase.map(emp => emp.id));
 
-console.log(empanadasBase.map(emp =>emp.stock).join('-'));
+console.log(empanadasBase.map(emp => emp.stock).join('-'));
 
 
 //PROMISE
@@ -23,7 +23,7 @@ console.log(empanadasBase.map(emp =>emp.stock).join('-'));
 const task = new Promise((resolve,reject) => {
     setTimeout(() => {
         resolve (empanadasBase);
-    }, 4000)
+    }, 3000)
     
 })
 
