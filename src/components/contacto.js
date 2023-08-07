@@ -1,9 +1,12 @@
 
 function Contacto (){
     return (
-        <>
-        <h2>Mail:</h2>
-        </>
+        <div>
+      
+      
+        </div>
+        
+        
     )
 }
 

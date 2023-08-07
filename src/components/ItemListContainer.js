@@ -40,11 +40,11 @@ function Empanadas() {
 
     return(
         
-       <div>
+        <>
+        
+        </>      
 
-Cantidad de empanadas: {empanadas.length}
 
-      </div>       
      
  );
 } 

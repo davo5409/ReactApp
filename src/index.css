@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -15,11 +16,31 @@ code {
 div.carrito{
   display:flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px;
+  padding: 20px;
   
 }
 
+
+
 div.botonCart{
-display: inline;
-color:aquamarine;
+text-align: center;
+padding: 20px;
+
+
+}
+
+
+.imagen{
+  height: 500px;
+  width: 500px;
+  margin-left: 300px;
+
+}
+
+.parrafo{
+  font-size: 18px;
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: beige;
 }

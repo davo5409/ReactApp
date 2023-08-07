@@ -1,7 +1,9 @@
 
 
 function Home(){
-return <div>Este es el home</div>
+
+return <img className="imagen" src="./empanadalogo.png" alt="logo de la marca de empanadas"></img> 
+
 }
 
 export default Home;
