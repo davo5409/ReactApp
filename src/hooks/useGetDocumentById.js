@@ -16,7 +16,7 @@ function useGetDocumentById(collectionName, id){
                     ...data,
                 };
             setDocument(documento);
-            
+            console.log(documento);
             }
         }).catch((err) => console.error(err));
     }, []);

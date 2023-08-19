@@ -13,13 +13,14 @@ code {
     monospace;
 }
 
-div.carrito{
+div.card{
   display:flex;
   flex-wrap: wrap;
   margin: 20px;
-  padding: 20px;  
+  padding: 20px;
+  width: 18rem;
+  background-color: beige;
 }
-
 
 
 div.botonCart{
@@ -49,3 +50,4 @@ padding: 20px;
   background-color: beige;
   border-radius: 10px solid beige;
 }
+

@@ -1,82 +1,34 @@
-import { useEffect, useState } from 'react';
+import {collection, getDocs} from 'firebase/firestore';
+import {useState, useEffect  } from 'react';
+import {db} from '../index';
+import ItemList from './ItemList';
 
-
-const empanadasBase = [
-    {id:1, producto: "jamonyqueso", precio: 200, stock:36},
-    {id:2, producto: "carne", precio: 220, stock:48},
-    {id:3, prodcuto: "humita", precio: 180, stock:24},
-    {id:4, producto: "pollo", precio: 190, stock:24},
-    {id:5, producto: "verdura", precio: 180, stock: 24},
-    {id:6, producto: "roquefort", precio: 250, stock:36}
-
-]
-
-//MAP
-
-console.log(empanadasBase.map(emp => emp.id));
-
-console.log(empanadasBase.map(emp => emp.stock).join('-'));
-
-
-//PROMISE
-
-const task = new Promise((resolve,reject) => {
-    setTimeout(() => {
-        resolve (empanadasBase);
-    }, 3000)
+const ItemListContainer =() => {
+    const [empanadas, setEmpanadas] = useState([])
+    useEffect(()=>{
+        const itemsCollection =
+        collection(db, "empanadas")
+        getDocs(itemsCollection)
+        .then((res)=>{
+            const list =
+            res.docs.map((product)=>{
+                return{
+                    id:product.id,
+                    ...product.data()
+                }
+            })
+            setEmpanadas(list)
+        })
+        .catch((error)=>console.log(error))
     
-})
+},[])
 
+return (
+    <div>
+        <ItemList empanadas={empanadas}/>
+    </div>
+)
 
-function Empanadas() {
-    const [empanadas, setEmpanadas]= useState([]);
-      
-    useEffect (() => {
-      task.then(empanadasProm => setEmpanadas(empanadasProm));
-    
+}
 
-    }, []);
-
-
-    return(
-        
-        <>
-        
-        </>      
-
-
-     
- );
-} 
-    
-export default Empanadas
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default ItemListContainer;

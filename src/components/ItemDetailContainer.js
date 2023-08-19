@@ -7,12 +7,12 @@ import ItemDetail from "./ItemDetail";
 
 function ItemDetailContainer(){
     const {id} = useParams();
-    const [ document, setDocument] = useState(null);
+    const [ document, setDocument] = useState({});
 
     useEffect(() => {
         const db = getFirestore();
 
-        const documentRef = doc(db, "empanadas", id);
+        const documentRef = doc(db, "empanadas", id );
 
         getDoc(documentRef).then((snapshot) => {
             if (snapshot.exists()){
@@ -22,7 +22,6 @@ function ItemDetailContainer(){
                     ...data,
                 };
             setDocument(documento);
-            console.log(documento);
             }
         }).catch((err) => console.error(err));
     }, []);
